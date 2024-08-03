@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;500;600;700; 800;900& display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0%; /* gives the gap b/w page and the footer*/
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #0c0c0c;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.places {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.places-heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.place {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #a64141;
+    background-color: #fff;
+    height:300px;
+}
+
+.place img {
+    width: 47%;
+    height: auto;
+    margin-right: 20px;
+    border: none;
+}
+
+.description {
+    width: 70%;
+    padding: 10px;
+    text-align: left;
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.buy-now {
+    position: fixed;
+    font-size: 25px;
+    bottom: 100px;
+    right: 0px;
+    padding: 20px 50px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.highlights, .full-description, .about {
+    padding: 20px;
+}
+
+.highlights ul, .about ul {
+    /* list-style-type: disc; */
+    padding-left: 20px;
+}
+
+.full-description a {
+    color: blue;
+    text-decoration: none;
+}
+
+.accommodation-type {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.accommodation-type h2 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.accommodation-type ul {
+    list-style-type: disc; /* Use disc bullets */
+    padding-left: 20px; /* Indent the bullets */
+}
+
+.accommodation-type li {
+    margin-bottom: 10px;
+}
+
+.accommodation-type li h3 {
+    color: #007bff;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.accommodation-type li p {
+    margin: 0;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 0%;
+    
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and larger phones */
+@media (max-width: 1024px) {
+    .banner {
+        height: 250px;
+    }
+}
+
+/* For smaller phones */
+@media (max-width: 768px) {
+    .banner {
+        height: 200px;
+        font-size: 1.5em;
+    }
+
+    .filter-options {
+        flex-wrap: wrap;
+    }
+
+    .filter-options button {
+        margin-bottom: 10px;
+    }
+
+    .states-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+    .search-bar input {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .states-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 8px 0; /* Adjust padding for smaller screens */
+    }
+
+    header nav {
+        gap: 5px; /* Reduce gap between navigation items */
+    }
+
+    header nav a {
+        padding: 6px 10px; /* Further adjust padding for smaller touch targets */
+        font-size: 12px; /* Further adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-nav {
+        gap: 10px; /* Reduce gap between footer navigation items */
+    }
+
+    .footer-nav a {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+.place {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #a64141;
+    background-color: #fff;
+    height: auto; /* Adjust height to allow flexibility */
+    flex-wrap: wrap; /* Ensure responsiveness for smaller screens */
+}
+
+.place img {
+    width: 47%;
+    height: auto;
+    margin-right: 20px;
+    border: none;
+}
+
+.place .description {
+    flex: 1; /* Allow description to take remaining space */
+    padding: 10px;
+    text-align: left;
+}
+
+.place .description p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .place img {
+        width: 100%; /* Adjust image width for smaller screens */
+        margin-right: 0; /* Remove right margin on smaller screens */
+        margin-bottom: 10px; /* Add space below image */
+    }
+
+    .place .description {
+        flex: 1 100%; /* Allow description to take full width */
+        margin-top: 10px; /* Add margin on top */
+    }
+
+    .place .description p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
