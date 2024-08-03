@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="CSS/thank.css">
+</head>
+<body>
+    <header>
+        <h1>Tourism Service</h1>
+        <nav>
+        <a href="service1.html">Home</a>
+        <a href="servicespage.html">Services</a>
+        <a href="discounts.html">Discounts</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+        </nav>
+    </header>  
+
+    <div class="confirmation">
+        <h1>Payment Success!</h1>
+        <p>Thank You for Booking from our site. Your Booking is successful!</p>
+        <p>Explore more places you want to visit.  <a href="service1.html" class="link">Click here</a> to return to home page.</p>
+        <p>Happy journey, visit our site again to create more memories together in time to travel.</p>
+        <!-- <a href="service1.html" class="link">Click here</a> -->
+    </div>
+
+    <script>
+        document.querySelector('.home-button').addEventListener('click', function() {
+            alert('Returning to home page');
+            window.location.href = '#home';
+        });
+    </script>
+    <footer>
+        <nav class="footer-nav">
+            <a href="#regions">Regions in India</a>
+            <a href="#states">Popular States</a>
+            <a href="termsandconditions.html">Terms & Conditions</a>
+            <a href="#travel">Cookies</a>
+            <a href="Feedback.html">Feedback</a>
+        </nav>
+        <p>&copy; 2024 Tourism Service. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback</title>
+<link rel="stylesheet" href="CSS/feedback.css">
+</head>
+<body>
+    <header>
+        <h1>Tourism Service</h1>
+        <nav>
+        <a href="service1.html">Home</a>
+        <a href="servicespage.html">Services</a>
+        <a href="discounts.html">Discounts</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+        </nav>
+    </header>
+<main>
+    <div class="feedback-form">
+        <h1>Feedback</h1>
+        <p>*any queries/ suggestions/ reviews can be filled</p>
+        <form onsubmit="return validateForm()">
+            <label for="name">Name* :</label>
+            <input type="text" id="name" name="name" placeholder="Enter name" required>
+
+            <label for="phone">Phone* :</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 phone no." required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Gmail or Yahoo ID">
+
+            <label for="feedback">Describe your feedback :</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="...Any query/ suggestion drop here!" required></textarea>
+
+            <p style="align-self: self-start; font-size: 20px;">Star ratings:</p>
+            <div class="stars">
+                <input type="radio" name="star" class="star-5" id="star-5" value="5">
+                <label for="star-5">&#9733;</label>
+                <input type="radio" name="star" class="star-4" id="star-4" value="4">
+                <label for="star-4">&#9733;</label>
+                <input type="radio" name="star" class="star-3" id="star-3" value="3">
+                <label for="star-3">&#9733;</label>
+                <input type="radio" name="star" class="star-2" id="star-2" value="2">
+                <label for="star-2">&#9733;</label>
+                <input type="radio" name="star" class="star-1" id="star-1" value="1">
+                <label for="star-1">&#9733;</label>
+            </div>
+
+            <button type="submit">SEND</button>
+        </form>
+    </div>
+    <div class="back-link">
+        <a href="service1.html">BACK</a>
+    </div>
+</main>
+
+
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var feedback = document.getElementById('feedback').value;
+        var starRating = document.querySelector('input[name="star"]:checked');
+
+        if (name === "" || phone === "" || feedback === "" || !starRating) {
+            alert("Please fill in all fields and select a star rating.");
+            return false;
+        }
+
+        // If all fields are filled, redirect to service1.html
+        window.location.href = 'service1.html';
+        return false; // Prevent default form submission
+    }
+</script>
+<footer>
+    <nav class="footer-nav">
+        <a href="#regions">Regions in India</a>
+        <a href="#states">Popular States</a>
+        <a href="termsandconditions.html">Terms & Conditions</a>
+        <a href="#travel">Cookies</a>
+        <a href="Feedback.html">Feedback</a>
+    </nav> &nbsp
+    <p>&copy; 2024 Tourism Service. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

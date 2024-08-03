@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="CSS/buy.css">
+</head>
+<body>
+    <header>
+        <h1>Tourism Service</h1>
+        <nav>
+        <a href="service1.html">Home</a>
+        <a href="servicespage.html">Services</a>
+        <a href="discounts.html">Discounts</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+        </nav>
+    </header>
+    <main>
+        <div class="booking-form">
+            <h1>BOOK NOW</h1>
+            <form id="bookingForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="place">Choose the place to visit</label>
+                <select id="place" name="place" required>
+                    <option value="">--select the place--</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Jammu&Kashmir">Jammu & Kashmir</option>
+                    <option value="Karnataka">Karnataka</option>
+                </select>
+
+                <label for="car">Choose a vehicle</label>
+                <select id="car" name="car" required>
+                    <option value="">--select the vehicle--</option>
+                    <option value="Tempo Traveller">Tempo Traveller</option>
+                    <option value="Five seater Car">Five seater Car</option>
+                    <option value="Seven seater Car">Seven seater Car</option>
+                    <option value="Mini Bus">Mini Bus</option>
+                    <option value="Bus">Bus</option>
+                </select>
+
+                <label for="People">Total Number Of People</label>
+                <input type="number" id="People" name="People" min="0" value="" required>
+
+                <label for="transport">No. of transport required</label>
+                <input type="number" id="transport" name="transport" min="0" value="" required>
+
+                <label for="rooms">No. of rooms required</label>
+                <input type="number" id="rooms" name="rooms" min="0" value="" required>
+
+                <label for="adults">Number of adults</label>
+                <input type="number" id="adults" name="adults" min="0" value="">
+
+                <label for="children">Number of children</label>
+                <input type="number" id="children" name="children" min="0" value="">
+
+                <label for="Payment">Select the Payment method</label>
+                <select id="Payment" name="Payment" required>
+                    <option value="">--select the Payment method--</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Debit cards">debit cards</option>
+                    <option value="Credit cards">Credit cards</option>
+                    <option value="Net Banking">Net Banking</option>
+                   
+                </select>
+
+                <label for="total">TOTAL AMOUNT</label>
+                <input type="text" id="total" name="total" readonly>
+
+                <button type="button" onclick="calculateTotal()">View Total</button>
+                <button type="submit" onclick="location.href='thankkkk.html'">BOOK</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+            <a href="#regions">Regions in India</a>
+            <a href="#states">Popular States</a>
+            <a href="termsandconditions.html">Terms & Conditions</a>
+            <a href="#travel">Cookies</a>
+            <a href="Feedback.html">Feedback</a>
+        </nav>
+        <p>&copy; 2024 Tourism Service. All rights reserved.</p>
+    </footer>
+    <script>
+        function calculateTotal() {
+            let transport = parseInt(document.getElementById('transport').value);
+            let rooms = parseInt(document.getElementById('rooms').value);
+            let People = parseInt(document.getElementById('People').value);
+            let total = People * ((500) + (1000) + (500));
+            document.getElementById('total').value = 'Rs.' + total;
+        }
+
+        // document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        //     // Check if all required fields are filled
+        //     let form = event.target;
+        //     if (!form.checkValidity()) {
+        //         event.preventDefault(); // Prevent form submission if not valid
+        //         alert('Please fill in all required fields.');
+        //     } else {
+                
+        //         window.location.href = 'thankkkk.html';}
+
+        // });
+    </script>
+</body>
+</html>

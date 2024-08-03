@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Service</title>
+    <link rel="stylesheet" href="CSS/service1.css">
+</head>
+<body>
+    <header>
+        <h1>Tourism Service</h1>
+        <nav>
+            <a href="service1.html">Home</a>
+            <a href="servicespage.html">Services</a>
+            <!-- <a href="#destinations">Places</a> -->
+            <!-- <a href="#investment">Investment Opportunities</a> -->
+            <a href="discounts.html">Discounts</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <div class="banner-text">
+            Explore the Beauty of Our States
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a state...">
+    </div>
+
+    <div class="filter-options">
+        <button class="filter-btn active" data-state="all">All</button>
+        <button class="filter-btn" data-state="goa">Goa</button>
+        <button class="filter-btn" data-state="karnataka">Karnataka</button>
+        <button class="filter-btn" data-state="kerala">Kerala</button>
+        <button class="filter-btn" data-state="gujarat">Gujarat</button>
+        <button class="filter-btn" data-state="maharashtra">Maharashtra</button>
+        <button class="filter-btn" data-state="jammu">Jammu & Kashmir</button>
+    </div>
+
+    <main>
+        <section class="states-grid">
+            <div class="state" data-state="goa">
+                <img src="images/goa/goa.jpg" alt="State 1">
+                <h2>Goa</h2>
+                <p>Travel to Goa <br> 20% OFF <br>4-5 Day Trip</p>
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+                <a href="goa.html">Read More</a>
+            </div>
+            <div class="state" data-state="karnataka">
+                <img src="images/karnataka/palace.jpg" alt="State 2">
+                <h2>Karnataka</h2>
+                <p>Travel to Karnataka <br> 25% OFF <br>5-6 Day trip </p>
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                </div>
+                <a href="karnataka.html">Read More</a>
+            </div>
+            <div class="state" data-state="kerala">
+                <img src="images/kerala/kerala.jpg" alt="State 4">
+                <h2>Kerala</h2>
+                <p>Travel to Kerala  <br> 10% OFF <br>5 Day Trip </p>
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span><span>&#9734;</span>
+                </div>
+                <a href="kerala.html">Read More</a>
+            </div>
+            <div class="state" data-state="gujarat">
+                <img src="images/gujarat/gir.jpg" alt="State 3">
+                <h2>Gujarat</h2>
+                <p>Travel to Gujarat <br> 15% OFF<br>6 Day Trip</p>
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                </div>
+                <a href="gujarat.html">Read More</a>
+            </div>
+            
+            <div class="state" data-state="maharashtra">
+                <img src="images/maharashtra/gateway.jpg" alt="State 5">
+                <h2>Maharashtra</h2>
+                <p>Travel to Maharashtra <br> 10% OFF<br>5-6 Day Trip </p>
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+                <a href="maharastra.html">Read More</a>
+            </div>
+            <div class="state" data-state="jammu">
+                <img src="images/jammu/srinagar.jpg" alt="State 6">
+                <h2>Jammu & Kashmir</h2>
+                <p>Travel to Jammu & Kashmir<br> 5% OFF <br>10-11 Day Trip </p>
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                </div>
+                <a href="jammu.html">Read More</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <a href="#regions">Regions in India</a>
+            <a href="#states">Popular States</a>
+            <a href="termsandconditions.html">Terms & Conditions</a>
+            <a href="#travel">Cookies</a>
+            <a href="Feedback.html">Feedback</a>
+        </nav>
+        <p>&copy; 2024 Tourism Service. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const states = document.querySelectorAll('.state');
+
+            searchInput.addEventListener('input', () => {
+                const searchText = searchInput.value.toLowerCase();
+                states.forEach(state => {
+                    const stateName = state.querySelector('h2').textContent.toLowerCase();
+                    if (stateName.includes(searchText)) {
+                        state.style.display = 'block';
+                    } else {
+                        state.style.display = 'none';
+                    }
+                });
+            });
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const state = button.getAttribute('data-state');
+                    states.forEach(stateElement => {
+                        if (state === 'all' || stateElement.getAttribute('data-state') === state) {
+                            stateElement.style.display = 'block';
+                        } else {
+                            stateElement.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
